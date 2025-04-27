@@ -49,7 +49,7 @@ object aguaSaborizada{
 }
 
 object coctelSuave{
-    const bebida = [whisky , terere]
+    const bebida = [wisky , terere]
     method rendimiento(cantidad) {
         const bebidasAConsiderar= bebida.filter({e=>e.rendimiento(cantidad)>0.5})
         return bebidasAConsiderar.sum({e=>e.rendimiento(cantidad)})
@@ -70,5 +70,17 @@ object coctelSuave{
 }
 
 object coctel{
-     
+     const bebida= []
+     method rendimiento(cantidad){
+        var rendimiento = 1
+        return bebida.forEach{p => rendimiento * p.rendimiento(cantidad)}
+     }
+
+    method agregar(nueva){
+        bebida.add(nueva)
+    }
+
+    method quitar(nueva){
+        bebida.remove(nueva)
+    } 
 }
